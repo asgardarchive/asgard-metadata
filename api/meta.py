@@ -1,7 +1,7 @@
 from flask import g, abort, request
 from flask_restx import Namespace, Resource
 
-from .context import get_meta
+from context import get_meta
 
 meta_namespace = Namespace("meta", "Metadata retrieval")
 

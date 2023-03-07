@@ -3,8 +3,8 @@ from flask_restx import Api
 
 from asgard_sdk.models.config_pb2 import ServerConfig
 
-from .meta import meta_namespace
-from .context import teardown_meta
+from meta import meta_namespace # try this in container
+from context import teardown_meta
 
 class Rest(object):
     def __init__(self, config: ServerConfig):
