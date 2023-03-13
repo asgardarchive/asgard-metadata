@@ -24,8 +24,8 @@ class Rest(object):
     def __register_teardowns(self):
         self.__app.teardown_appcontext(teardown_meta)
     
-    def run(self):
+    def run(self, debug=False):
         self.__register_teardowns()
         self.__build_namespaces()
 
-        self.__app.run(port=80, debug=True)
+        self.__app.run(port=80, debug=debug)

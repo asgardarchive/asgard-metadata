@@ -8,8 +8,6 @@ from google.protobuf.json_format import ParseDict
 
 from asgard_sdk.models.config_pb2 import ServerConfig 
 
-# pip packages are getting installed under the wrong name asgard-sdk instead of asgard_sdk
-
 from api.api import Rest
 
 HOME = getenv("HOME")
@@ -44,6 +42,7 @@ parser = ArgumentParser()
 
 parser.add_argument("-c", "--config", action="store", default=CONFIG_PATH)
 parser.add_argument("-r", "--run", action="store_true")
+parser.add_argument("-d", "--debug", action="store_true", default=False)
 
 if __name__ == "__main__":
     args = parser.parse_args()
@@ -53,4 +52,4 @@ if __name__ == "__main__":
 
     if args.run:
         rest = Rest(config)
-        rest.run()
+        rest.run(debug=args.debug)
