@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-# env vars for mongo ip
-
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install python3 python3-pip git protobuf-compiler -y
 
